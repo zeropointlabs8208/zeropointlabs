@@ -15,8 +15,9 @@ export async function uploadContactForm(contactData: ContactFormFields) {
     }
 
     const supabase = createClient(supabaseUrl, supabaseKey);
-    await supabase.from("Contacts").insert([contactData]);
-
+    const {data,error} = await supabase.from("contactqueries").insert([contactData]);
+    console.log(data,error);
+    
     return { success: true };
   } catch (error) {
     return { success: false, error: (error as Error).message };

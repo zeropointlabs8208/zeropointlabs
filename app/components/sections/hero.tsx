@@ -19,24 +19,24 @@ export function Hero() {
                     <p className="text-gray-700 ">
                         Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
                     </p>
-                    <div className="flex gap-5 md:gap-14">
+                    <div className="flex gap-4 md:gap-14">
                         <Link className="flex items-center space-x-4 rounded-md" href="/contact">
                             <Button
-                                className="px-6 py-3 bg-black text-white rounded-md hover:bg-gray-700 transition"
+                                className="px-2 md:px-6 py-1 md:py-3 bg-black text-white rounded-md hover:bg-gray-700 transition"
                                 text="Get Started"
                                 rightArrow
                             />
                         </Link>
                         <Link className="flex items-center space-x-4 rounded-md" href="#">
                             <Button
-                                className="px-6 py-3 border border-gray-700 text-gray-700 rounded-md hover:text-black transition"
+                                className="px-2 md:px-6 py-1 md:py-3 border border-gray-700 text-gray-700 rounded-md hover:text-black transition"
                                 text=" How it works"
                                 rightArrow
                             />
                         </Link>
                     </div>
                 </div>
-                <div className="relative border-2 border-green-600 rounded-[42px] h-[301px] md:h-[398px] w-[298px] md:w-[339px] ">
+                <div className="relative border-2 border-green-600 rounded-[42px] h-[301px] md:h-[398px] w-[246px] md:w-[246px] ">
                     <img
                         alt="Team working on analytics"
                         className="absolute shadow-lg rounded-[35px] bottom-[13px] left-[20px] h-full"
@@ -44,7 +44,7 @@ export function Hero() {
                         src={heroImg.src}
                         width="400" />
                     <div
-                     className="absolute flex flex-col justify-end rounded-[18px] bg-white h-[148px] md:h-[191px] md:w-[184px] w-[142px] bottom-[24px] -left-[26px] ">
+                     className="absolute flex flex-col justify-end rounded-[18px] bg-white h-[111px] md:h-[191px] md:w-[184px] w-[111px] bottom-[24px] -left-[26px] ">
                         <img src={vector.src} className="rounded-b-[18px]" />
                      </div>
                 </div>

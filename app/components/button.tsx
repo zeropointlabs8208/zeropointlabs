@@ -10,9 +10,9 @@ interface ButtonProps {
 export function Button({ className, rightArrow, text }: ButtonProps) {
     return (
         <button
-            className={`flex items-center justify-center gap-2 outline-none ${className}`}>
+            className={`flex items-center justify-center md:gap-2 outline-none ${className} `}>
             {text}
-            {rightArrow && <BiRightArrowAlt />}
+            {rightArrow && <BiRightArrowAlt className="mt-[2px]"/>}
         </button>
     )
 }

@@ -2,7 +2,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
-// import { Facebook, Instagram, Send, Mail, Phone, MapPin } from 'lucide-react';
 import { uploadContactForm } from '../actions';
 import { IoIosSend } from 'react-icons/io';
 import { FiMail } from 'react-icons/fi';
@@ -45,7 +44,7 @@ export default function ContactForm() {
   const selectedInterest = watch('interest');
 
   return (
-    <div className="min-h-screen  bg-[#2e024a] md:p-14 p-6 ">
+    <div className="min-h-screen  bg-[#2e024a] md:p-14 py-4 px-2 ">
       <div className="max-w-[1800px] w-full flex flex-col md:flex-row gap-8">
         <div className="text-white md:w-1/2">
           <h1 className="text-4xl sm:text-[48px] font-bold leading-[51px] ">
@@ -54,12 +53,12 @@ export default function ContactForm() {
             together
           </h1>
 
-          <div className="space-y-8 text-xl mt-10 sm:mt-20">
+          <div className="space-y-8 md:text-xl mt-10 sm:mt-20">
             <div className="pl-4 flex items-center gap-3">
               <FiMail className="text-[#a80f78]" />
               <span>rushikesh@zeropointlabs.in</span>
             </div>
-            <div className="flex items-center gap-3 bg-[#42064f] border-2 border-[#a80f78] w-fit p-4 rounded-xl pr-32 sm:pr-44">
+            <div className="flex items-center gap-3 bg-[#42064f] border-2 border-[#a80f78] w-fit p-4 rounded-xl pr-16 sm:pr-44">
               <FaPhone className="text-[#a80f78] fill" />
               <span>+123 456 789</span>
             </div>
@@ -69,7 +68,7 @@ export default function ContactForm() {
             </div>
           </div>
 
-          <div className="flex items-center gap-6 mt-5 sm:mt-60">
+          <div className="flex items-center gap-6 mt-5 md:mt-60">
             <a href="#" className=" transition-colors">
               <FaFacebookF className='text-[28px] fill-white w-5 h-5' />
             </a>
@@ -79,7 +78,7 @@ export default function ContactForm() {
           </div>
         </div>
 
-        <div className="bg-[#ededed] rounded-lg p-8 md:w-1/2 h-fit">
+        <div className="bg-[#ededed] rounded-lg p-8 md:w-1/2 h-fit md:m-0 mx-4">
           <h3 className="mb-6 font-medium">I'm interested in...</h3>
 
           <div className="flex flex-wrap sm:grid grid-cols-3 gap-2 mb-3">
