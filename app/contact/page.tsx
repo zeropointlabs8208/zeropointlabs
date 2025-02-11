@@ -2,7 +2,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
-import { uploadContactForm } from '../actions';
 import { IoIosSend } from 'react-icons/io';
 import { FiMail } from 'react-icons/fi';
 import { FaFacebookF, FaInstagram, FaLocationDot, FaPhone } from 'react-icons/fa6';
@@ -16,7 +15,7 @@ export interface ContactFormFields {
 
 export default function ContactForm() {
 
-  const { register, handleSubmit, setValue, watch, formState: { errors,isSubmitting } } = useForm<ContactFormFields>({
+  const { register, handleSubmit, setValue, watch, formState: { errors, isSubmitting } } = useForm<ContactFormFields>({
     defaultValues: {
       interest: 'Solidity Developer',
     },
@@ -32,13 +31,26 @@ export default function ContactForm() {
 
   const onSubmit = async (data: ContactFormFields) => {
     try {
-      await uploadContactForm(data)
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (!result.success) {
+        toast.error(result.message);
+        return;
+      }
+      
       toast.success('Message sent successfully!');
     } catch (error) {
-      toast.error((error as Error).message)
+      toast.error((error as Error).message);
     }
   };
-
 
 
   const selectedInterest = watch('interest');
@@ -158,7 +170,7 @@ export default function ContactForm() {
             </div>
 
             <button
-            disabled={isSubmitting}
+              disabled={isSubmitting}
               type="submit"
               className={`w-fit !mt-40 px-10 py-4 bg-[#a80f78] text-white rounded-lg flex items-center justify-center gap-2 hover:bg-pink-700 transition-colors ${isSubmitting && 'opacity-30'}`}
             >
